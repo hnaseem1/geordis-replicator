@@ -1,3 +1,4 @@
+require('pry')
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -48,8 +49,9 @@ class Replicator
     # This transports a glass from the cupboard to inside the replicator.
     # If this method is successful, it will return the glass that was
     # transported and @inside_replicator will contain the glass
+  # binding.pry
     # in its contents.
-    retrieve_glass
+    # retrieve_glass
 
     # Setup an instance variable to access the glass.
     @glass = @inside_replicator.contents.first
@@ -61,9 +63,11 @@ class Replicator
     # shoud contain the proper ingredients.
 
     # To retrieve the glass from inside the replicator, use:
-    #   glass_inside_replicator
+
+      # glass_inside_replicator
     # And then to see what's inside the glass, use:
-    #   glass_inside_replicator.inside.contents
+
+    # glass_inside_replicator.inside.contents
     transport_ingredients_to_glass
 
     # This methods mixes the ingredients in the glass around.
@@ -71,17 +75,22 @@ class Replicator
     #   glass_inside_replicator.inside.contents
     # then you may find the ingredients order has changed.
     # If it's successful, all the ingredients should still be in the glass.
-    mix
 
+    mix
     # This method adjusts the temperature of the contents in the glass.
     # If you read back `glass.temperature`, then it should be set
+    # binding.pry
+        # in its contents.
+        # retrieve_glass
     # to the temperature the recipe calls for if this method executed properly.
     adjust_temperature
 
     # This method moves the glass from @inside_replicator to @plate
     # so that the character can pick it up and drink it.
+    # binding.pry
     # If it's successful, glass_inside_replicator should be nil
-    # and now @plate.contents should contain the glass at
+    # and now  should contain the glass at
+    # @plate.contents
     # the proper temperature and with the proper ingredients.
     transport_glass_to_replicator_plate
   end
@@ -108,7 +117,8 @@ class Replicator
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
 
-    # Go through recipe and transport each ingredient
+  # Go through recipe and transport each ingredient
+
     # from pantry to glass, one by one.
     @recipe.ingredients.each do |ingredient_name|
       @enterprise.transporter.energize(
@@ -124,7 +134,7 @@ class Replicator
 
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
-
+    # binding.pry
     # Draw power if possible and then mix ingredients around.
     if @power && @enterprise.reactor.draw_power(3)
       glass_inside_replicator.inside.contents.shuffle!.compact!
