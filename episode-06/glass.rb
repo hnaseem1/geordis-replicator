@@ -2,7 +2,7 @@
 # transported around the ship as the drink is made.
 # When this is instatiated, it should set its temperature
 # and setup a spot inside of itself to store the ingredients.
-
+require 'pry'
 class Glass
 
   LUKE_WARM = 37
@@ -33,6 +33,7 @@ class Glass
   # program to see if the drink was correctly replicated.
   # When the Validator.new is run, @errors is populated with
   # the issues if the recipe isn't correct.
+
   def errors
     @errors
   end
